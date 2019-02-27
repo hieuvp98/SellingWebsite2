@@ -4,6 +4,8 @@ package com.bksoftware.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,7 +20,9 @@ public class MediumCategory {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(table = "big_category")
-    BigCategory bigCategory;
+    private BigCategory bigCategory;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "mediumCategory")
+    private Set<SmallCategory> smallCategories = new HashSet<>();
     private boolean status;
 }

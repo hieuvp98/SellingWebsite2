@@ -4,6 +4,7 @@ package com.bksoftware.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,5 +21,7 @@ public class SmallCategory {
     @JoinColumn(table = "medium_category")
     private MediumCategory mediumCategory;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "smallCategory")
+    private List<Product> products;
     private boolean status;
 }

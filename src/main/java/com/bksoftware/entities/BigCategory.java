@@ -4,6 +4,7 @@ package com.bksoftware.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -15,7 +16,8 @@ public class BigCategory {
     private int id;
 
     private String name;
-
+    @OneToMany(mappedBy = "bigCategory")
+    private Set<MediumCategory> mediumCategories;
     private boolean status;
 
 }
