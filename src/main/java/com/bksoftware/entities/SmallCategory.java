@@ -1,17 +1,16 @@
 package com.bksoftware.entities;
 
-
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Data
-@Table(name = "small_category")
-public class SmallCategory {
 
+@Entity
+@Table(name = "small_category")
+@Data
+public class SmallCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,8 +21,12 @@ public class SmallCategory {
     @JoinColumn(table = "medium_category")
     private MediumCategory mediumCategory;
 
+
     @OneToMany(mappedBy = "smallCategory")
     private Set<Product> products = new HashSet<>();
+
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "smallCategory")
 
     private boolean status;
 }
