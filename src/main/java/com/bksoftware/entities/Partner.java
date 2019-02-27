@@ -4,6 +4,8 @@ package com.bksoftware.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,6 +20,9 @@ public class Partner {
 
     @Column(name = "img_url")
     private String imgUrl;
+
+    @OneToMany(mappedBy = "partner")
+    Set<Product> products = new HashSet<>();
 
     private boolean status;
 }

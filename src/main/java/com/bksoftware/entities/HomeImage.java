@@ -8,9 +8,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "home_image")
 public class HomeImage {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String url;
+
     private boolean status;
 }

@@ -16,6 +16,7 @@ public class BigCategory {
 
     private String name;
 
+
     private boolean status;
 
 }
