@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bksoftware</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>dem</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <description>Demo project for Spring Boot</description>
